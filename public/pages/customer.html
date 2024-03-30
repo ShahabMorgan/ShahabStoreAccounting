@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../styles/output.css">
+</head>
+
+<body>
+
+    <div id="customer-modal-delete-js"
+        class="fixed flex flex-col items-center justify-center hidden w-screen h-screen gap-5 bg-black opacity-95 ">
+        <div class="text-white">
+            آیا از حذف کردن این آیتم اطمینان دارید ؟
+        </div>
+        <div>
+            <button type="" id="sumbit-delete-btn-js" data-delete="accept"
+                class="text-white inline-flex items-center bg-green-600 hover:bg-green-700  active:ring-1  font-medium rounded-lg text-sm px-5 py-2.5 text-center  m-auto">
+                بله
+            </button>
+            <button type="" id="sumbit-delete-btn-js" data-delete="denied"
+                class="text-white inline-flex items-center bg-red-600 hover:bg-red-900  active:ring-1  font-medium rounded-lg text-sm px-5 py-2.5 text-center  m-auto">
+                خیر
+            </button>
+        </div>
+    </div>
+
+    <div id="customer-modal-js"
+        class="fixed flex items-center justify-center hidden w-screen h-screen overflow-auto bg-black opacity-95 ">
+
+        <!-- Customer Form -->
+
+        <form class="p-4 md:p-5 -translate--10" id="customer-add-form-js" autocomplete="off">
+            <div class="grid p-4 mb-4 overflow-auto md:p-5 md:grid-cols-2 sm:grid-cols-6 sm:gap-8 md:gap-4 text-nowrap"
+                dir="rtl">
+
+
+                <div class="col-span-2 ">
+                    <label for="customerName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white "
+                        dir="rtl">نام مشتری</label>
+                    <input id="customerName" tabindex="3" data-form="customerName" dir="rtl" required
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 ">
+                    </input>
+                </div>
+
+
+                <div class="col-span-2 sm:col-span-1">
+                    <label for="customerPhone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        dir="rtl">شماره تماس</label>
+                    <input type="tel" name="customerPhone" id="customerPhone" tabindex="4" data-form="customerPhone"
+                        class="rial-text bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 spin-off"
+                        dir="rtl">
+                </div>
+
+
+
+                <div class="col-span-2 sm:col-span-1">
+                    <label for="customerCard" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        dir="rtl">شماره کارت</label>
+                    <input type="sellPrice" name="customerCard" id="customerCard" tabindex="5" data-form="customerCard"
+                        class="rial-text bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 spin-off"
+                        dir="rtl">
+                </div>
+
+
+
+
+                <div class="col-span-2">
+                    <label for="customerIdNumber" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        dir="rtl">کد ملی</label>
+                    <input type="text" name="customerIdNumber" id="customerIdNumber" tabindex="6"
+                        data-form="customerIdNumber"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="" dir="rtl">
+                </div>
+
+                <div class="col-span-full">
+                    <label for="customerAdresse" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        dir="rtl">آدرس</label>
+                    <input type="text" name="customerAdresse" id="customerAdresse" tabindex="7"
+                        data-form="customerAdresse"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="" dir="rtl">
+                </div>
+
+
+
+
+            </div>
+
+            <div class="flex justify-center w-full">
+                <button type="" id="sumbit-customer-btn-js" tabindex="8"
+                    class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 m-auto">
+                    اضافه کردن مشتری
+
+                    <svg class="w-5 h-5 me-1 -ms-1" fill="currentColor" viewBox="0 0 20 20" xmlns="">
+                        <path fill-rule="evenodd"
+                            d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            </form>
+            <!-- Storage Form -->
+
+        </div>
+    </div>
+
+    <div class="side-bar-mb side-bar-mb-customer">
+        <a class="transition-all rounded-md cursor-pointer hover:bg-workspace-300 active:bg-workspace-200 hover:text-white"
+            dir="rtl" href="./workspace.html">
+            میزکار
+        </a>
+        <a class="transition-all rounded-md cursor-pointer hover:bg-storage-300 active:bg-storage-200 hover:text-white"
+            dir="rtl" href="./storage.html">
+            انبار</a>
+        <a class="transition-all rounded-md cursor-pointer hover:bg-customer-300 active:bg-customer-200 hover:text-white"
+            dir="rtl" href="./customer.html">
+            مشتریان
+        </a>
+    </div>
+
+
+    <!-- Main Continer -->
+    <div class="flex h-full ">
+        <section class="flex m-auto overflow-x-auto ">
+            <div
+                class="flex flex-col items-center justify-center text-nowrap    border-4 border-black p-[30px]  rounded-[30px] bg-white ">
+                <button id="add-to-customer-btn-js"
+                    class="bg-customer-300 hover:bg-customer-200 active:bg-customer-100 ease-in-out duration-150  focus:outline-none text-white font-bold  px-[20px] py-[5px]  transition-all   self-center mb-6 rounded-[10px]">اضافه
+                    کردن
+                    مشتری</button>
+
+                <table class="table-section" dir="rtl">
+                    <thead class="space-y-80 ">
+                        <tr>
+                            <th class="px-[20px] py-[10px] ">نام مشتری</th>
+                            <th class="px-[20px] py-[10px] ">شماره تلفن</th>
+                            <th class="px-[20px] py-[10px] ">شماره کارت</th>
+                            <th class="px-[20px] py-[10px] ">شماره ملی</th>
+                            <th class="px-[20px] py-[10px] ">آدرس</th>
+                            <th class="px-[20px] py-[10px] ">عملیات ها</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customer-data-table-js">
+
+                    </tbody>
+
+                </table>
+            </div>
+
+
+            <!-- Side Bar -->
+
+            <section
+                class="side-bar-pc side-bar-pc-customer py-[40px] bg-white flex flex-col font-bold  text-center min-w-40  text-black border-4 border-black rounded-[30px]"
+                dir="rtl">
+                <a class="p-[5px]  w-full hover:bg-workspace-300 active:bg-workspace-200   hover:text-white transition-all  cursor-pointer"
+                    dir="rtl" href="./workspace.html">
+                    میزکار
+                </a>
+                <a class="p-[5px]  w-full hover:bg-storage-300 active:bg-storage-200 hover:text-white transition-all cursor-pointer"
+                    dir="rtl" href="./storage.html">
+                    انبار</a>
+                <a class="p-[5px]  w-full hover:bg-customer-300 active:bg-customer-200 hover:text-white transition-all  cursor-pointer  "
+                    dir="rtl" href="./customer.html">
+                    مشتریان
+                </a>
+            </section>
+        </section>
+
+    </div>
+
+
+
+
+
+
+
+    <script type="module" src="../../src/scripts/customer/customer.js">
+
+    </script>
+
+
+</body>
+
+</html>

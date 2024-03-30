@@ -1,0 +1,54 @@
+{
+  "name": "shahabstoreaccounting",
+  "version": "1.0.0",
+  "author": "shahabMorgan",
+  "description": "helloworld",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css --watch",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "build": "electron-builder --win"
+  },
+  "build": {
+    "appId": "ShahabStore",
+    "win": {
+      "target": "nsis",
+      "icon": "./assets/icons/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "installerIcon": "./assets/icons/icon.ico",
+      "uninstallerIcon": "./assets/icons/icon.ico",
+      "license": "license.md",
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "@persian-tools/persian-tools": "^3.5.2",
+    "electron-squirrel-startup": "^1.0.0",
+    "file-system": "^2.2.2",
+    "fs-js": "^1.0.6",
+    "persian-tools": "^0.0.5",
+    "shamsi-date-converter": "^1.0.5"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.3.0",
+    "@electron-forge/maker-deb": "^7.3.0",
+    "@electron-forge/maker-rpm": "^7.3.0",
+    "@electron-forge/maker-squirrel": "^7.3.0",
+    "@electron-forge/maker-zip": "^7.3.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.3.0",
+    "@electron-forge/plugin-fuses": "^7.3.0",
+    "electron": "29.1.4",
+    "electron-builder": "^24.13.3",
+    "persian-date": "^1.1.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.12",
+    "tailwindcss": "^3.4.1"
+  }
+}

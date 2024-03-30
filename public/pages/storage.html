@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../styles/output.css">
+</head>
+
+<body>
+    <div id="storage-modal-delete-js"
+        class="fixed flex flex-col items-center justify-center hidden w-screen h-screen gap-5 bg-black opacity-95">
+        <div class="text-white">
+            آیا از حذف کردن این آیتم اطمینان دارید ؟
+        </div>
+        <div>
+            <button type="" id="sumbit-delete-btn-js" data-delete="accept"
+                class="text-white inline-flex items-center bg-[rgb(0,240,0)] hover:bg-[rgb(182,255,155)] active:ring-1  font-medium rounded-lg text-sm px-[20px] py-[10px] px-[20px] text-base text-center  m-auto">
+                بله
+            </button>
+            <button type="" id="sumbit-delete-btn-js" data-delete="denied"
+                class="text-white inline-flex items-center bg-[rgb(255,0,0)] hover:bg-[rgb(226,118,118)]  active:ring-1  font-medium rounded-lg text-sm px-5 py-2.5 text-center px-[20px] py-[10px] px-[20px]">
+                خیر
+            </button>
+        </div>
+    </div>
+
+
+
+
+    <div id="storage-modal-js"
+        class="fixed z-50 flex items-center justify-center hidden w-screen h-screen bg-black opacity-95">
+
+        <!-- Storage Form -->
+        <form class=" md:p-[10px] -translate--10" id="customer-add-form-js" autocomplete="off">
+            <div class="grid grid-cols-5 gap-3 mb-4 text-nowrap " dir="rtl">
+
+                <div class="flex items-center justify-center gap-3 col-span-full">
+                    <div class="w-5/12">
+                        <label for="productName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            tabindex="1" dir="rtl">نام
+                            محصول</label>
+                        <input type="text" name="productName" id="productName-js" tabindex="2"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            placeholder="نام محصول را وارد کنید" dir="rtl" data-form="productName">
+                    </div>
+                    <div class="w-3/12">
+                        <label for="type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            dir="rtl">نوع</label>
+                        <select data-form="type" tabindex="3"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                            >
+                            <option value="اسکوتر">اسکوتر</option>
+                            <option value="دوچرخه">دوچرخه</option>
+                            <option value="موتور">موتور</option>
+                        </select>
+                    </div>
+
+
+
+
+                    <div class="flex justify-center grid-cols-5 col-span-1 gap-3 ">
+                        <div class="col-span-1 ">
+                            <label for="color" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                dir="rtl">رنگ</label>
+                            <input type="text" name="size" id="size" tabindex="4"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                placeholder="" dir="rtl" data-form="color">
+                        </div>
+
+                        <div class="">
+                            <label for="size" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                dir="rtl">سایز</label>
+                            <input type="number" name="size" id="size" tabindex="5"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                placeholder="" dir="rtl" data-form="size">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="quantity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            dir="rtl">تعداد</label>
+                        <input type="number" name="quantity" id="quantity" tabindex="6"
+                            class="placeholder:text-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            placeholder="تعداد خریداری شده" required="" dir="rtl" data-form="quantity">
+                    </div>
+                </div>
+
+
+                <div class="flex justify-center gap-3 col-span-full">
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="buyCost" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            dir="rtl">قیمت
+                            خرید</label>
+                        <input type="text" name="buyCost" id="buyCost" tabindex="7" data-text="rial"
+                            class="rial-text bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 spin-off"
+                            placeholder="ریال" required="" dir="rtl" data-form="buyCost">
+                    </div>
+
+                    <div class="col-span-2 sm:col-span-1 ">
+                        <label for="transportCost" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            dir="rtl">هزینه حمل
+                            و
+                            انقل</label>
+                        <input type="text" name="transportCost" id="transportCost" tabindex="8" data-text="rial"
+                            class="rial-text bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 spin-off"
+                            placeholder="ریال" required="" dir="rtl" data-form="transportCost">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="flex justify-center w-full">
+                <button id="sumbit-storage-btn-js" tabindex="9"
+                    class="text-white inline-flex py-[5px]  px-[10px]  items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 m-auto">
+                    <svg class="w-5 h-5 me-1 -ms-1" fill="currentColor" viewBox="0 0 20 20" xmlns="">
+                        <path fill-rule="evenodd"
+                            d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    اضافه کردن به انبار
+                </button>
+            </div>
+            <!-- Storage Form -->
+
+        </form>
+    </div>
+
+    <!-- Main Continer -->
+
+    <div class="side-bar-mb side-bar-mb-storage">
+        <a class="transition-all rounded-md cursor-pointer hover:bg-workspace-300 active:bg-workspace-200 hover:text-white"
+            dir="rtl" href="./workspace.html">
+            میزکار
+        </a>
+        <a class="transition-all rounded-md cursor-pointer hover:bg-storage-300 active:bg-storage-200 hover:text-white"
+            dir="rtl" href="./storage.html">
+            انبار</a>
+        <a class="transition-all rounded-md cursor-pointer hover:bg-customer-300 active:bg-customer-200 hover:text-white"
+            dir="rtl" href="./customer.html">
+            مشتریان
+        </a>
+    </div>
+
+    <div class="flex h-full ">
+        <section class="flex m-auto overflow-x-auto ">
+            <div
+                class="flex flex-col items-center text-nowrap    border-4 border-black p-[30px]  rounded-[30px] bg-white ">
+                <div class="relative flex items-center justify-center w-full mb-5">
+                    <!-- <div class="absolute right-0 pr-5">
+                        تعداد
+                    </div> -->
+
+                    <button id="add-to-storage-btn-js"
+                        class=" bg-storage-300 hover:bg-storage-200  active:bg-storage-100  focus:outline-none ease-in-out duration-150  transition-all text-white font-bold  px-[20px] py-[5px]   justify-self-start  rounded-[10px]">اضافه
+                        کردن
+                        محصول</button>
+                </div>
+
+
+                <table class="table-section" dir="rtl">
+                    <thead class="">
+                        <tr>
+                            <th class="px-[20px] py-[10px]">شماره</th>
+                            <th class="px-[20px] py-[10px]">نام محصول</th>
+                            <th class="px-[20px] py-[10px]">نوع محصول</th>
+                            <th class="px-[20px] py-[10px]">سایز</th>
+                            <th class="px-[20px] py-[10px]">رنگ</th>
+                            <th class="px-[20px] py-[10px]">تعداد</th>
+                            <th class="px-[30px] py-[10px]">قیمت خرید</th>
+                            <th class="px-[30px] py-[10px]">هزینه حمل و انقل</th>
+                            <th class="px-[30px] py-[10px]">جمع خالص</th>
+                            <th class="px-[30px] py-[10px]">جمع کل</th>
+                            <th class="px-[30px] py-[10px]">تاریخ</th>
+                            <th class="px-[20px] py-[10px]">عملیات ها</th>
+                        </tr>
+                    </thead>
+                    <tbody id="storage-data-table-js">
+
+                    </tbody>
+
+                </table>
+            </div>
+
+
+            <!-- Side Bar -->
+
+            <section
+                class="side-bar-pc side-bar-pc-storage py-[40px] bg-white flex flex-col font-bold  text-center min-w-40  text-black border-4 border-black rounded-[30px]"
+                dir="rtl">
+                <a class="p-[5px]  w-full hover:bg-workspace-300 active:bg-workspace-200   hover:text-white transition-all  cursor-pointer"
+                    dir="rtl" href="./workspace.html">
+                    میزکار
+                </a>
+                <a class="p-[5px]  w-full hover:bg-storage-300 active:bg-storage-200 hover:text-white transition-all cursor-pointer"
+                    dir="rtl" href="./storage.html">
+                    انبار</a>
+                <a class="p-[5px]  w-full hover:bg-customer-300 active:bg-customer-200 hover:text-white transition-all  cursor-pointer  "
+                    dir="rtl" href="./customer.html">
+                    مشتریان
+                </a>
+            </section>
+        </section>
+
+    </div>
+
+
+
+
+    <script type="module" src="../../src/scripts/storage/storage.js">
+
+    </script>
+
+</body>
+
+</html>
