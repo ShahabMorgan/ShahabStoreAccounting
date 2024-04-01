@@ -51,11 +51,3 @@ function showModal(proudctId, section, modal) {
   }
 }
 
-// function checkKeyDown() {
-//   window.addEventListener("keydown", () => {
-//     if (event.key === "Enter") {
-//       return true;
-//     }
-//     return false;
-//   });
-// }
